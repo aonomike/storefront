@@ -4,11 +4,11 @@ from django.contrib.contenttypes.models import ContentType
 from django.contrib.auth.models import User
 
 
-from security.models import UpdateLog
+from security.models import SecurityBaseModel
 
 
-class LikedItem(UpdateLog):
-    liked_by = models.ForeignKey(User, on_delete=models.CASCADE)
+class LikedItem(SecurityBaseModel):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="liked_item_user")
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
-    object_id = models.PositiveIntegerField
+    object_id = models.PositiveIntegerField()
     content_object = GenericForeignKey()
