@@ -17,6 +17,7 @@ class Collection(SecurityBaseModel):
 # Create your models here.
 class Product(SecurityBaseModel):
     title = models.CharField(max_length=255, blank=False, null=False)
+    slug = models.SlugField(default="-")
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     inventory = models.IntegerField()
@@ -87,6 +88,7 @@ class Address(SecurityBaseModel):
     customer = models.OneToOneField(
         Customer, on_delete=models.CASCADE, primary_key=True, related_name="address_customer"
     )
+    zip = models.CharField(max_length=255, null=True)
 
     class Meta:
         verbose_name = "Addres"
