@@ -68,9 +68,9 @@ class Order(SecurityBaseModel):
 
 
 class Customer(SecurityBaseModel):
-    MEMBERSHIP_SILVER = 1
-    MEMBERSHIP_GOLD = 2
-    MEMBERSHIP_PLATINUM = 3
+    MEMBERSHIP_SILVER = 'SILVER'
+    MEMBERSHIP_GOLD = 'GOLD'
+    MEMBERSHIP_PLATINUM = 'PLATINUM'
     MEMBERSHIP_CHOICES = [
         (MEMBERSHIP_SILVER, "Silver"),
         (MEMBERSHIP_GOLD, "Gold"),
@@ -82,7 +82,7 @@ class Customer(SecurityBaseModel):
     phone = models.CharField(max_length=255)
     birth_date = models.DateField(null=True)
     membership = models.CharField(
-        max_length=5, choices=MEMBERSHIP_CHOICES, default=MEMBERSHIP_GOLD
+        max_length=20, choices=MEMBERSHIP_CHOICES, default=MEMBERSHIP_GOLD
     )
 
     class Meta:
