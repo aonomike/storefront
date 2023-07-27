@@ -10,6 +10,7 @@ django-debug-toolbar = "*"
 django-environ = "*"
 install = "*"
 psycopg2-binary = "*"
+djangorestframework = "*"
 
 [dev-packages]
 pytest = "*"
