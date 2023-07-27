@@ -8,7 +8,7 @@ from security.models import SecurityBaseModel
 # Create your models here.
 class Tag(SecurityBaseModel):
     label = models.CharField(max_length=255)
-    
+
     def __str__(self) -> str:
         return str(self.label)
 
@@ -28,5 +28,3 @@ class TaggedItem(SecurityBaseModel):
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
     object_id = models.PositiveIntegerField()
     content_object = GenericForeignKey()
-    
-    
