@@ -68,9 +68,9 @@ class Order(SecurityBaseModel):
 
 
 class Customer(SecurityBaseModel):
-    MEMBERSHIP_SILVER = 'SILVER'
-    MEMBERSHIP_GOLD = 'GOLD'
-    MEMBERSHIP_PLATINUM = 'PLATINUM'
+    MEMBERSHIP_SILVER = "SILVER"
+    MEMBERSHIP_GOLD = "GOLD"
+    MEMBERSHIP_PLATINUM = "PLATINUM"
     MEMBERSHIP_CHOICES = [
         (MEMBERSHIP_SILVER, "Silver"),
         (MEMBERSHIP_GOLD, "Gold"),
@@ -136,6 +136,7 @@ class CartItem(SecurityBaseModel):
     """
     Products added to a Cart
     """
+
     cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
     product = models.ForeignKey(
         Product, on_delete=models.CASCADE, related_name="cart_item_product"
@@ -150,6 +151,7 @@ class Promotion(SecurityBaseModel):
     """
     Discount to be offered
     """
+
     description = models.CharField(max_length=255)
     discount = models.FloatField()
 

@@ -16,6 +16,7 @@ djangorestframework = "*"
 pytest = "*"
 pytest-django = "*"
 pytest-watch = "*"
+ipdb = "*"
 
 [requires]
 python_version = "3.10"
